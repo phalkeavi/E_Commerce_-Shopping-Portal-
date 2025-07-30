@@ -1,0 +1,35 @@
+.slogan-container {
+  text-align: center;
+  margin: 0px;
+  padding: 0.1px;
+  background: linear-gradient(to right, #f4f5f1, #fcf4fc); /* Elegant dark green gradient */
+  box-shadow: 2px 2px 6px rgba(26, 25, 25, 0.05); /* subtle bottom shadow */
+}
+*{
+    border-color: black;
+}
+.slogan-text {
+    text-transform:capitalize; 
+  font-size: 15px;
+  color: #030303;
+  font-weight: 700;
+  font-family:'Courier New', Courier, monospace;
+  padding: 4px 14px;
+  letter-spacing: 0.5px;
+  border-left: 4px solid #000c00;
+  border-right: 4px solid rgb(26, 25, 26);
+  border-radius: 3px;
+  background: rgba(14, 13, 13, 0.05); /* subtle overlay */
+  display: inline-block;
+  backdrop-filter: blur(1px);
+   white-space: normal;         /* Allow text to wrap */
+  word-break: break-word;      /* Break long words if needed */
+  line-height: 1.6;            /* More readable multi-line text */
+  min-width: 200px;            /* Optional: ensures some width */
+  max-width: 90vw;  
+}
+.slogan-text:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+}

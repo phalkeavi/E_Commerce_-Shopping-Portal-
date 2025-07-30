@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.grocery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grocery-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.grocery-card:hover {
+  transform: translateY(-5px);
+}
+
+.grocery-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  padding: 12px;
+}
+
+.grocery-info {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.grocery-info h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: #333;
+}
+
+.brand {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.price {
+  font-size: 16px;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.buy-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #388e3c;
+}

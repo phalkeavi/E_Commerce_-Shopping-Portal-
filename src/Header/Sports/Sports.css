@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f1f5f9;
+  margin: 0;
+  padding: 0;
+}
+
+.sports-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.sports-card {
+  background: linear-gradient(145deg, #ffffff, #e8edf3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.sports-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.sports-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.sports-details {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sports-details h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+  color: #222;
+}
+
+.brand {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.price {
+  font-size: 18px;
+  color: #007BFF;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.buy-btn {
+  padding: 10px 16px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.buy-btn:hover {
+  background: #0f913c;
+}

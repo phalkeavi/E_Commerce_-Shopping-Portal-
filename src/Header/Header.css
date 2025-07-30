@@ -1,0 +1,92 @@
+/* Main header */
+.header {
+  background: linear-gradient(to right,  #ef70f3,#e8f53b);  /* Amazon-like dark navy */
+  padding: 10px 20px;
+  color: rgb(22, 21, 21);
+  font-family: 'Segoe UI', sans-serif;
+  border-color: black;
+}
+/* Flex layout for container */
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-color: black;
+}
+
+/* Left part: logo + dropdown */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Logo styling */.logo:hover{
+    transform:scale(1.05);
+}
+.logo {
+  max-height: 45px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background-color: white;
+  padding: 4px;
+}
+
+/* Category Dropdown near logo */
+.category-dropdown {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  width: 170px;
+}
+
+/* Right part: search + icons */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Search box */
+.header-search {
+  display: flex;
+  align-items: center;
+  background-color: #f0f5ff;
+  border-radius: 6px;
+  padding: 5px 10px;
+  width: 250px;
+}
+
+.search-icon {
+  color: gray;
+  margin-right: 6px;
+}
+
+.search-input {
+    display: flex;
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Nav icons like Login, Cart, etc. */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+}
+
+.nav-item:hover {
+  color: #ffe500;
+}
+.nav0container{
+  border-color: black;
+}

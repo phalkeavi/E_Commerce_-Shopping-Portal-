@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅ For redirecting
-import './Login.css'; // Your CSS file
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // ✅ import axios
+import './Login.css';
 
 function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -10,7 +11,7 @@ function Login() {
     password: ''
   });
 
-  const navigate = useNavigate(); // ✅ useNavigate hook for redirection
+  const navigate = useNavigate();
 
   const handleToggle = () => {
     setIsLogin(!isLogin);
@@ -21,21 +22,38 @@ function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.email || !formData.password || (!isLogin && !formData.name)) {
+
+    const { name, email, password } = formData;
+
+    if (!email || !password || (!isLogin && !name)) {
       alert("Please fill all required fields");
       return;
     }
 
-    if (isLogin) {
-      alert(`✅ Logged in with: ${formData.email}`);
-    } else {
-      alert(`✅ Signed up with: ${formData.name} (${formData.email})`);
+    try {
+      if (isLogin) {
+        // 🔁 LOGIN
+        const res = await axios.post("http://localhost:5000/login", { email, password });
+        if (res.data.success) {
+          alert("✅ Login successful");
+          navigate('/');
+        } else {
+          alert("❌ Login failed: " + res.data.message);
+        }
+      } else {
+        // 🆕 SIGNUP
+        const res = await axios.post("http://localhost:5000/signup", { name, email, password });
+        alert(res.data.message);
+        if (res.data.success) {
+          setIsLogin(true); // Switch to login view
+        }
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      alert("❌ Something went wrong");
     }
-
-    // Redirect to home or dashboard after login
-    navigate('/');
   };
 
   return (
